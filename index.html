@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09080d">
+  <meta name="description" content="PDflix — descubra filmes e séries, veja sinopses e encontre trailers e opções oficiais para assistir.">
+  <title>PDflix — Filmes e Séries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="PDflix início"><span class="brand-mark">PD</span><span>PD<span class="purple">FLIX</span></span></a>
+    <nav class="nav" aria-label="Navegação principal">
+      <button class="nav-link active" data-filter="Todos">Início</button>
+      <button class="nav-link" data-filter="Filme">Filmes</button>
+      <button class="nav-link" data-filter="Série">Séries</button>
+      <button class="nav-link" data-filter="Minha lista">Minha lista</button>
+    </nav>
+    <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar título..." aria-label="Buscar título"></label>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow"><span class="dot"></span> SEU PRÓXIMO PLAY COMEÇA AQUI</p>
+        <h1>Histórias que<br>ficam com <span class="purple">você.</span></h1>
+        <p class="hero-copy">Explore filmes e séries, descubra novas histórias e encontre onde assistir oficialmente.</p>
+        <button class="primary-btn" id="exploreBtn">Explorar catálogo <span>→</span></button>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="hero-card card-back"><span>PD</span></div>
+        <div class="hero-card card-front"><div class="poster-sun"></div><span class="mini-tag">EM DESTAQUE</span><strong>O próximo<br>grande sucesso.</strong><small>DESCUBRA NA PDFLIX</small></div>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="section-heading">
+        <div><p class="eyebrow">ESCOLHA SUA PRÓXIMA HISTÓRIA</p><h2 id="catalogTitle">Explorar catálogo</h2></div>
+        <div class="filters" id="genreFilters">
+          <button class="chip selected" data-genre="Todos">Todos</button>
+          <button class="chip" data-genre="Ação">Ação</button>
+          <button class="chip" data-genre="Drama">Drama</button>
+          <button class="chip" data-genre="Ficção">Ficção</button>
+          <button class="chip" data-genre="Comédia">Comédia</button>
+          <button class="chip" data-genre="Animação">Animação</button>
+        </div>
+      </div>
+      <div class="results-line"><span id="resultCount">12 títulos</span><span>CATÁLOGO DE DESCOBERTAS</span></div>
+      <div class="grid" id="catalogGrid"></div>
+      <div class="empty hidden" id="emptyState"><span>⌕</span><h3>Nenhum título encontrado</h3><p>Tente outro nome ou escolha um gênero diferente.</p><button class="secondary-btn" id="clearFilters">Limpar filtros</button></div>
+      <p class="notice">Catálogo demonstrativo. As opções de disponibilidade devem ser verificadas em serviços oficiais da sua região.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">PD</span><span>PD<span class="purple">FLIX</span></span></a><p>Descubra histórias. Encontre onde assistir.</p><span class="copyright">© 2026 PDflix · Projeto independente de catálogo</span></footer>
+
+  <div class="modal hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-backdrop" id="closeBackdrop" aria-label="Fechar detalhes"></button>
+    <article class="modal-card"><button class="close-btn" id="closeModal" aria-label="Fechar">×</button><div class="modal-poster" id="modalPoster"></div><div class="modal-info"><p class="eyebrow" id="modalMeta"></p><h2 id="modalTitle"></h2><p id="modalDescription"></p><div class="modal-actions"><button class="primary-btn" id="trailerBtn">Ver trailer ↗</button><button class="secondary-btn" id="saveBtn">＋ Minha lista</button></div><p class="modal-note">O trailer será aberto no YouTube. Para assistir ao título completo, confira os serviços oficiais disponíveis na sua região.</p></div></article>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
