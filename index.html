@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#09080d">
-  <meta name="description" content="PDflix — descubra filmes e séries, veja sinopses e encontre trailers e opções oficiais para assistir.">
-  <title>PDflix — Filmes e Séries</title>
+  <meta name="theme-color" content="#08070c">
+  <meta name="description" content="PDflix — descubra filmes e séries, explore gêneros e encontre trailers e opções oficiais para assistir.">
+  <title>PDflix — Seu próximo play</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,29 +18,31 @@
       <button class="nav-link active" data-filter="Todos">Início</button>
       <button class="nav-link" data-filter="Filme">Filmes</button>
       <button class="nav-link" data-filter="Série">Séries</button>
-      <button class="nav-link" data-filter="Minha lista">Minha lista</button>
+      <button class="nav-link" data-filter="Minha lista">Minha lista <span id="savedCount" class="saved-count">0</span></button>
     </nav>
-    <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar título..." aria-label="Buscar título"></label>
+    <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Buscar filmes e séries..." aria-label="Buscar título"></label>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero-content">
-        <p class="eyebrow"><span class="dot"></span> SEU PRÓXIMO PLAY COMEÇA AQUI</p>
-        <h1>Histórias que<br>ficam com <span class="purple">você.</span></h1>
-        <p class="hero-copy">Explore filmes e séries, descubra novas histórias e encontre onde assistir oficialmente.</p>
-        <button class="primary-btn" id="exploreBtn">Explorar catálogo <span>→</span></button>
+        <p class="eyebrow"><span class="live-dot"></span> SEU UNIVERSO DE FILMES E SÉRIES</p>
+        <h1>Seu próximo<br>play está <span class="purple">aqui.</span></h1>
+        <p class="hero-copy">Descubra histórias, explore novos mundos e encontre trailers e opções oficiais para assistir.</p>
+        <div class="hero-actions"><button class="primary-btn" id="exploreBtn">Explorar catálogo <span>→</span></button><span class="hero-note"><span class="tiny-shield">✓</span> Descoberta sem complicação</span></div>
       </div>
       <div class="hero-art" aria-hidden="true">
-        <div class="orb orb-one"></div><div class="orb orb-two"></div>
-        <div class="hero-card card-back"><span>PD</span></div>
-        <div class="hero-card card-front"><div class="poster-sun"></div><span class="mini-tag">EM DESTAQUE</span><strong>O próximo<br>grande sucesso.</strong><small>DESCUBRA NA PDFLIX</small></div>
+        <div class="glow"></div><div class="ring ring-one"></div><div class="ring ring-two"></div>
+        <div class="floating-poster poster-a"><span class="poster-symbol">D</span><small>FICÇÃO CIENTÍFICA</small><strong>ALÉM<br>DO TEMPO</strong></div>
+        <div class="floating-poster poster-b"><span class="poster-symbol">✦</span><small>GRANDES HISTÓRIAS</small><strong>OUTRO<br>UNIVERSO</strong></div>
+        <div class="floating-poster poster-c"><span class="poster-symbol">PD</span></div>
       </div>
+      <div class="hero-bottom"><span>CATÁLOGO PARA QUEM AMA BOAS HISTÓRIAS</span><span>FILMES <i></i> SÉRIES <i></i> DESCOBERTAS</span></div>
     </section>
 
     <section class="catalog" id="catalog">
       <div class="section-heading">
-        <div><p class="eyebrow">ESCOLHA SUA PRÓXIMA HISTÓRIA</p><h2 id="catalogTitle">Explorar catálogo</h2></div>
+        <div><p class="eyebrow">ENCONTRE ALGO PARA ASSISTIR</p><h2 id="catalogTitle">Explore o catálogo</h2></div>
         <div class="filters" id="genreFilters">
           <button class="chip selected" data-genre="Todos">Todos</button>
           <button class="chip" data-genre="Ação">Ação</button>
@@ -45,20 +50,21 @@
           <button class="chip" data-genre="Ficção">Ficção</button>
           <button class="chip" data-genre="Comédia">Comédia</button>
           <button class="chip" data-genre="Animação">Animação</button>
+          <button class="chip" data-genre="Suspense">Suspense</button>
         </div>
       </div>
-      <div class="results-line"><span id="resultCount">12 títulos</span><span>CATÁLOGO DE DESCOBERTAS</span></div>
+      <div class="results-line"><span id="resultCount">20 títulos</span><span class="catalog-label">CURADORIA PDFLIX <b>●</b></span></div>
       <div class="grid" id="catalogGrid"></div>
       <div class="empty hidden" id="emptyState"><span>⌕</span><h3>Nenhum título encontrado</h3><p>Tente outro nome ou escolha um gênero diferente.</p><button class="secondary-btn" id="clearFilters">Limpar filtros</button></div>
-      <p class="notice">Catálogo demonstrativo. As opções de disponibilidade devem ser verificadas em serviços oficiais da sua região.</p>
+      <p class="notice">As capas desta versão são artes ilustrativas do catálogo. Os trailers abrem no YouTube; a disponibilidade para assistir ao título completo deve ser confirmada nos serviços oficiais da sua região.</p>
     </section>
   </main>
 
-  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">PD</span><span>PD<span class="purple">FLIX</span></span></a><p>Descubra histórias. Encontre onde assistir.</p><span class="copyright">© 2026 PDflix · Projeto independente de catálogo</span></footer>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">PD</span><span>PD<span class="purple">FLIX</span></span></a><p>Descubra histórias. Encontre seu próximo play.</p><span class="copyright">© 2026 PDflix · Projeto independente de catálogo</span></footer>
 
   <div class="modal hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <button class="modal-backdrop" id="closeBackdrop" aria-label="Fechar detalhes"></button>
-    <article class="modal-card"><button class="close-btn" id="closeModal" aria-label="Fechar">×</button><div class="modal-poster" id="modalPoster"></div><div class="modal-info"><p class="eyebrow" id="modalMeta"></p><h2 id="modalTitle"></h2><p id="modalDescription"></p><div class="modal-actions"><button class="primary-btn" id="trailerBtn">Ver trailer ↗</button><button class="secondary-btn" id="saveBtn">＋ Minha lista</button></div><p class="modal-note">O trailer será aberto no YouTube. Para assistir ao título completo, confira os serviços oficiais disponíveis na sua região.</p></div></article>
+    <article class="modal-card"><button class="close-btn" id="closeModal" aria-label="Fechar">×</button><div class="modal-poster" id="modalPoster"></div><div class="modal-info"><p class="eyebrow" id="modalMeta"></p><h2 id="modalTitle"></h2><p id="modalDescription"></p><div class="modal-actions"><button class="primary-btn" id="trailerBtn">Ver trailer <span>↗</span></button><button class="secondary-btn" id="saveBtn">＋ Minha lista</button></div><p class="modal-note">O trailer será pesquisado no YouTube. Para assistir ao título completo, confira os serviços oficiais disponíveis na sua região.</p></div></article>
   </div>
   <script src="app.js"></script>
 </body>
